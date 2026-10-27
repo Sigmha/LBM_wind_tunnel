@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjr31qobyx7kr"]
+
+[ext_resource type="Script" path="res://gdscript/wing_main.gd" id="1_l3cpt"]
+
+[node name="Wing" type="Node"]
+script = ExtResource("1_l3cpt")
+
+[node name="Display" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
