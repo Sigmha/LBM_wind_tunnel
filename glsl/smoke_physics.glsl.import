@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://kp6uslgauied"
+path="res://.godot/imported/smoke_physics.glsl-8f879d608de41b578f9cc61dbd091599.res"
+
+[deps]
+
+source_file="res://glsl/smoke_physics.glsl"
+dest_files=["res://.godot/imported/smoke_physics.glsl-8f879d608de41b578f9cc61dbd091599.res"]
+
+[params]
+

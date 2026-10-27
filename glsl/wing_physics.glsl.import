@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dl38ph27k68f7"
+path="res://.godot/imported/wing_physics.glsl-8b63a9bd3f0833da0efb23816c1f2c81.res"
+
+[deps]
+
+source_file="res://glsl/wing_physics.glsl"
+dest_files=["res://.godot/imported/wing_physics.glsl-8b63a9bd3f0833da0efb23816c1f2c81.res"]
+
+[params]
+
