@@ -7,7 +7,6 @@ const N := NX * NY
 const U_IN := 0.06
 const C := 160.0                 # corde (mailles)
 const T_REL := 0.12              # épaisseur relative NACA 0012
-const ALPHA_DEG := 5.0           # angle d'attaque (> 0 : bord d'attaque en haut)
 const XP := 480.0                # pivot au quart de corde
 const YP := 399.5                # (NY-1)/2 : plan de symétrie exact
 const T_RAMP := 6000.0
@@ -15,7 +14,6 @@ const SCALE := 1
 const PROBE_X := 900
 const PROBE_Y := 400
 const SAMPLE_EVERY := 5          # lire la sonde toutes les 5 frames physique
-const THRESH := 1e-3             
 const FORCE_SCALE := 100000.0
 const STATS_FROM := 30000       # pas à partir duquel on moyenne (régime établi)
 const LAMBDA := 3.0 / 16.0       # -1.0 => BGK (taum = tau), pour le test de régression
@@ -32,3 +30,7 @@ const SUBSTEPS_MIN := 4
 const SUBSTEPS_MAX := 200
 const MIN_FPS := 50.0
 const ALPHA_PER_STEP := 0.002    # degrés par pas LBM (= 0,05 / 25 : même ω qu'avant)
+# Recoding config
+const FFMPEG_PATH := "C:/Users/CL/Downloads/Setup/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe"
+const GIF_FPS := 8.0
+const GIF_DURATION := 5.0

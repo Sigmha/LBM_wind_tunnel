@@ -29,3 +29,5 @@ var info: Label
 var info_fps: Label
 var info_mode: Label
 var info_instructions: Label
+var ffmpeg_path = ProjectSettings.globalize_path(c.FFMPEG_PATH)
+var is_recording_gif := false

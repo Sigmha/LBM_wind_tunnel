@@ -5,6 +5,7 @@ var c = WingConfig.new()
 var s = WingState.new(c)
 var wing_hud = WingHud.new(s, c)
 var wing_gpu = WingGpu.new(s, c)
+var wing_recording : WingRecording
 
 var ceiling: int = c.SUBSTEPS_MAX
 var adaptative_substep := false
@@ -12,6 +13,7 @@ var ticks_count := 0
 var frame := 0
 
 func _ready() -> void:
+	wing_recording = WingRecording.new(s, c, get_viewport())
 	# Setup solid buffer
 	wing_gpu.setup_solid_buffer()
 	# Setup physics buffer
@@ -29,12 +31,14 @@ func _ready() -> void:
 	add_child(s.info_instructions)
 	wing_gpu.sample()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if adaptative_substep: adapt()
 	wing_hud.update_info2()
 	frame += 1
 	if frame % c.SAMPLE_EVERY == 0 and s.step > int(c.T_RAMP):
 		wing_gpu.sample()
+	# GIF recording
+	wing_recording.recording_gif(delta)
 
 func _physics_process(_delta: float):
 	s.substeps_tick = s.substeps
@@ -96,3 +100,8 @@ func _input(event: InputEvent) -> void:
 			s.re_target = maxf(s.re_target / 1.1, c.RE_MIN)
 		elif event.keycode == KEY_H:
 			wing_hud.update_hud_visibility()
+		elif event is InputEventKey and event.pressed and event.keycode == KEY_N:
+			if not s.is_recording_gif:
+				wing_recording.start_recording()
+		elif event is InputEventKey and event.pressed and event.keycode == KEY_S:
+			wing_recording.screenshot()
